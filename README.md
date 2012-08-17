@@ -2,20 +2,27 @@
 
 First clone the repo. Fire up your favorite IDE and first run:
 
-```/performance-puzzle/src/main/java/com/zilverline/GenerateDates.java``` 
+<pre>
+/performance-puzzle/src/main/java/com/zilverline/GenerateDates.java
+</pre>
 
 to generate the file 
 
-```/performance-puzzle/src/test/resources/dates.txt``` 
+<pre>
+/performance-puzzle/src/test/resources/dates.txt
+</pre>
 
 containing 500.000 dates (ms since epoch) separated by ```|``` with 50 times the ```..26505|end|begin|13180..``` sequence.
  
 Then configure your run profiles to include the following VM arguments:
 
-```-Xprof -Xmx512m```
+<pre>
+-Xprof -Xmx512m
+</pre>
 
 If you don't you'll get the following:
 
+<pre>
     Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
 	    at java.util.Arrays.copyOf(Arrays.java:2882)
 	    at java.lang.AbstractStringBuilder.expandCapacity(AbstractStringBuilder.java:100)
@@ -24,6 +31,7 @@ If you don't you'll get the following:
 	    at com.zilverline.ReadDates1.writeFutureDates(ReadDates1.java:94)
 	    at com.zilverline.ReadDates1.perform(ReadDates1.java:71)
 	    at com.zilverline.ReadDates1.main(ReadDates1.java:64)
+</pre>
 	
 And you'll also miss out on the profiler output:
 
@@ -100,7 +108,9 @@ Global summary of 26.63 seconds:
 
 Start your performance puzzle with running 
 
-```/performance-puzzle/src/main/java/com/zilverline/ReadDates1.java``` 
+<pre>
+/performance-puzzle/src/main/java/com/zilverline/ReadDates1.java
+</pre>
 
 And have a go at improving the performance.
 
